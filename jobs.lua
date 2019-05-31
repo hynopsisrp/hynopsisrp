@@ -101,7 +101,7 @@ TEAM_LTPOLICE = DarkRP.createJob("[VIP] Lieutenant Police", {
     customCheck = function(ply) return CLIENT or
         table.HasValue({"superadmin", "admin", "vip", "vip+", "mvp", "mvp+", "elite", "manager"}, ply:GetNWString("usergroup"))
     end,              
-    CustomCheckFailMsg = "tu n'as pas le bon grade!"
+    CustomCheckFailMsg = "tu n'as pas le bon grade!",
 })
 
 TEAM_CHIEF = DarkRP.createJob("Commissaire ", {
@@ -486,7 +486,32 @@ TEAM_PARRAIN = DarkRP.createJob("Parrain [VIP]", {
         customCheck = function(ply) return CLIENT or
         table.HasValue({"superadmin", "admin", "vip", "vip+", "mvp", "mvp+", "elite", "manager"}, ply:GetNWString("usergroup"))
     end,
-    CustomCheckFailMsg = "Tu n'as pas le bon grade!"              
+    CustomCheckFailMsg = "Tu n'as pas le bon grade!",              
+})
+            
+--[[
+  Métier Hitman [VIP]
+--]]
+TEAM_HITMAN = DarkRP.createJob("[VIP] Hitman", {
+    color = Color(25, 25, 25, 255),
+    model = "models/player/agent_47.mdl",
+    description = [[Ton rôle est de te faire de l'argent en réalisent des contrats!]],
+    weapons = {"weapon_arc_atmcard", "weapon_arc_phone", "weapon_fists"},
+    command = "hitman",
+    max = 1,
+    salary = GAMEMODE.Config.normalsalary * 1.34,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    category = "ILLEGAL",
+    PlayerDeath = function(ply, weapon, killer)
+        ply:teamBan()
+        ply:changeTeam(GAMEMODE.DefaultTeam, true)
+        DarkRP.notifyAll(0, 4, "")
+        customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "admin", "vip", "vip+", "mvp", "mvp+", "elite", "manager"}, ply:GetNWString("usergroup"))
+    end,
+    CustomCheckFailMsg = "Tu n'est pas vip!",              
 })
 --[[---------------------------------------------------------------------------
 Define which team joining players spawn into and what team you change to if demoted
