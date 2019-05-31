@@ -101,7 +101,7 @@ TEAM_LTPOLICE = DarkRP.createJob("[VIP] Lieutenant Police", {
     customCheck = function(ply) return CLIENT or
         table.HasValue({"superadmin", "admin", "vip", "vip+", "mvp", "mvp+", "elite", "manager"}, ply:GetNWString("usergroup"))
     end,              
-    CustomCheckFailMsg = "tu n'as pas le bon grade!",
+    CustomCheckFailMsg = "tu n'as pas le bon grade!"
 })
 
 TEAM_CHIEF = DarkRP.createJob("Commissaire ", {
