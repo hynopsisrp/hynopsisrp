@@ -460,6 +460,30 @@ TEAM_MAFIA = DarkRP.createJob("Mafieux", {
         DarkRP.notifyAll(0, 4, "")
     end
 })
+
+--[[
+  Métier Parrain
+--]]
+TEAM_MOB = DarkRP.createJob("Parrain", {
+    color = Color(25, 25, 25, 255),
+    model = "models/player/gman_high.mdl",
+    description = [[Ton rôle est de diriger ton gang et de le faire prosperer.]],
+    weapons = {"weapon_arc_atmcard", "weapon_arc_phone", "weapon_fists"},
+    command = "mobboss",
+    max = 1,
+    salary = GAMEMODE.Config.normalsalary * 1.34,
+    admin = 0,
+    vote = false,
+    hasLicense = false,
+    category = "ILLEGAL",
+    PlayerDeath = function(ply, weapon, killer)
+        ply:teamBan()
+        ply:changeTeam(GAMEMODE.DefaultTeam, true)
+        DarkRP.notifyAll(0, 4, "")
+        customCheck = function(ply) return CLIENT or
+        table.HasValue({"superadmin", "admin", "vip", "vip+", "mvp", "mvp+", "elite", "manager"}, ply:GetNWString("usergroup"))
+    end,
+})
 --[[---------------------------------------------------------------------------
 Define which team joining players spawn into and what team you change to if demoted
 ---------------------------------------------------------------------------]]
