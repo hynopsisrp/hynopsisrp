@@ -26,7 +26,7 @@ Add your custom jobs under the following line:
 
 TEAM_MODERATION = DarkRP.createJob("MODÉRATION", {
     color = Color(143, 143, 143, 255),
-    model = {"models/player/skeleton.mdl"},
+    model = {"models/captainbigbutt/vocaloid/shadow_miku_append.mdl", "models/captainbigbutt/vocaloid/shadow_miku_append.mdl"},
     description = [[Métier réservé à l'équipe de modération du serveur.
 /!\ MÉTIER HRP /!\]],
     weapons = {"weapon_arc_atmcard", "weapon_arc_phone", "weapon_fists"},
