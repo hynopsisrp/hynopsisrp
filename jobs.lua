@@ -462,9 +462,9 @@ TEAM_MAFIA = DarkRP.createJob("Mafieux", {
 })
 
 --[[
-  Métier Parrain
+  Métier Parrain [VIP]
 --]]
-TEAM_MOB = DarkRP.createJob("Parrain", {
+TEAM_PARRAIN = DarkRP.createJob("Parrain [VIP]", {
     color = Color(25, 25, 25, 255),
     model = "models/player/gman_high.mdl",
     description = [[Ton rôle est de diriger ton gang et de le faire prosperer.]],
@@ -483,6 +483,7 @@ TEAM_MOB = DarkRP.createJob("Parrain", {
         customCheck = function(ply) return CLIENT or
         table.HasValue({"superadmin", "admin", "vip", "vip+", "mvp", "mvp+", "elite", "manager"}, ply:GetNWString("usergroup"))
     end,
+    CustomCheckFailMsg = "Tu n'as pas le bon grade!"              
 })
 --[[---------------------------------------------------------------------------
 Define which team joining players spawn into and what team you change to if demoted
