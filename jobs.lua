@@ -483,7 +483,7 @@ TEAM_PARRAIN = DarkRP.createJob("Parrain [VIP]", {
         ply:teamBan()
         ply:changeTeam(GAMEMODE.DefaultTeam, true)
         DarkRP.notifyAll(0, 4, "")
-        customCheck = function(ply) return CLIENT or
+    customCheck = function(ply) return CLIENT or
         table.HasValue({"superadmin", "admin", "vip", "vip+", "mvp", "mvp+", "elite", "manager"}, ply:GetNWString("usergroup"))
     end,
     CustomCheckFailMsg = "Tu n'as pas le bon grade!",              
