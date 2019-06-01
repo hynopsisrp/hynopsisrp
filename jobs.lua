@@ -508,9 +508,6 @@ TEAM_HITMAN = DarkRP.createJob("[VIP] Hitman", {
         ply:teamBan()
         ply:changeTeam(GAMEMODE.DefaultTeam, true)
         DarkRP.notifyAll(0, 4, "")
-        customCheck = function(ply) return CLIENT or
-        table.HasValue({"superadmin", "admin", "vip", "vip+", "mvp", "mvp+", "elite", "manager"}, ply:GetNWString("usergroup"))
-    end,
    customCheck = function(ply) return CLIENT or
         table.HasValue({"superadmin", "admin", "vip", "vip+", "mvp", "mvp+", "elite", "manager"}, ply:GetNWString("usergroup"))
    end,                                 
